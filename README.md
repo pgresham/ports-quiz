@@ -14,10 +14,10 @@ If you entered `23` however, it will tell you the right answer and recycle the q
 
 ### Great, I know my ports. Can I make a custom file?
 Yes! The code can easily be adapted to quiz just about anything using the quiz_maker.py script included with the main file. If you want to manually make your own file, format your text file as follows:
-
-`question 1:answer 1`
-`question 2:answer 2`
-...and so on to `question n: answer n`
+<br/>
+`question 1:answer 1`<br/>
+`question 2:answer 2`<br/>
+...and so on to `question n: answer n`<br/>
 
 As a note, the parser reads each line as a question answer pair, so multi-line questions will need to be put on a single line.
 

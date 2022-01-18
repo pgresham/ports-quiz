@@ -5,13 +5,12 @@
 This is a simple study tool to learn the port/protocol associations on the CompTIA Network+ exam among others. 
 
 ### How do I use it?
-To use the default program, simply run the ports_quiz.py script in the same directory as the default.txt quiz file. The script will first ask for a file to read from. Pressing enter accepts the default vale of `default.txt`. I will discuss custom files later in this readme.
+To use the default program, simply run the ports_quiz.py script in the same directory as the default.txt quiz file. The script will first ask for a file to read from. Pressing enter accepts the default vale of `default.txt`. I will discuss custom files later in this readme.<br/>
 It will show you a protocol and you answer with the port or ports associated with it.
-For instance let's say you see
-`ssh>`
-you'd answer `22` and get the response `correct!`
+For instance let's say you see `ssh>` <br/>
+you'd answer `22` and get the response `correct!`<br/>
 If you entered `23` however, it will tell you the right answer and recycle the quetion back into the rotation.
-
+<br/><br/>
 ### Great, I know my ports. Can I make a custom file?
 Yes! The code can easily be adapted to quiz just about anything using the quiz_maker.py script included with the main file. If you want to manually make your own file, format your text file as follows:
 <br/>

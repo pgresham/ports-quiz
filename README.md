@@ -1,25 +1,25 @@
 # ports-quiz
 ## Ports Quiz for Network+ Exam
 
-###What is it?
+### What is it?
 This is a simple study tool to learn the port/protocol associations on the CompTIA Network+ exam among others. 
 
-###How do I use it?
-To use the default program, simply run the ports_quiz.py script in the same directory as the default.txt quiz file. The script will first ask for a file to read from. Pressing enter accepts the default vale of ***default.txt***. I will discuss custom files later in this readme.
+### How do I use it?
+To use the default program, simply run the ports_quiz.py script in the same directory as the default.txt quiz file. The script will first ask for a file to read from. Pressing enter accepts the default vale of `default.txt`. I will discuss custom files later in this readme.
 It will show you a protocol and you answer with the port or ports associated with it.
 For instance let's say you see
-***ssh>***
-you'd answer ***22*** and get the response ***correct!***
-If you entered ***23*** however, it will tell you the right answer and recycle the quetion back into the rotation.
+`ssh>`
+you'd answer `22` and get the response `correct!`
+If you entered `23` however, it will tell you the right answer and recycle the quetion back into the rotation.
 
-###Great, I know my ports. Can I make a custom file?
+### Great, I know my ports. Can I make a custom file?
 Yes! The code can easily be adapted to quiz just about anything using the quiz_maker.py script included with the main file. If you want to manually make your own file, format your text file as follows:
 
-question 1:answer 1
+`question 1:answer 1
 question 2:answer 2
-...and so on to question n: answer n
+...and so on to question n: answer n`
 
 As a note, the parser reads each line as a question answer pair, so multi-line questions will need to be put on a single line.
 
-###Can I use this code or any part of if for my own project?
+### Can I use this code or any part of if for my own project?
 It's Licensed under CC0. Go nuts. 

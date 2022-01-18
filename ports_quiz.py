@@ -1,24 +1,20 @@
 #!/usr/bin/python3
 
-#the following was used to build the array for this program:
-#a = ''
-#services = []
-#while True:
-#    a = str(input('service: '))
-#    if a == 'done':
-#        break
-#    b = str(input('port: '))
-#    services.append([a,b])
-#print(services)
-
-
 import random
 import time
 import os
 import copy
 
-def clear():
-    os.system('clear')
+#Windows/Posix compatible!
+if os.name == 'nt':
+    def clear():
+        os.system('cls')
+else:
+    def clear():
+        os.system('clear')	
+
+
+    
 def menu():
     print('Network+ Ports Quiz')
     print('1 Practice The Ports')
@@ -26,8 +22,24 @@ def menu():
     print('00 Exit (Works Any Time)')
 
 
-def practice(SERVICES):
+def gen(file='default.txt'):
+    #Error handling done in the mainloop for this block
+    #Usually I would want to handle errors within the function.
+    services = []
+    with open(file,'r') as f:
+        for line in f:
+            services.append(line.strip().split(':'))
+            #current code supports only single line questions and answers 
+            #formatted as question:answer in specified text file
+        f.close()
+    return services
 
+    
+### Practice asks each question in turn and either returns
+### 'correct' if answered correctly or flashes the correct
+### answer on the screen. Incorrectly answered questions
+### are recycled and asked again until right. 
+def practice(SERVICES):
     services = copy.deepcopy(SERVICES)
         #Use a local copy to avoid killing the global one
     while len(services)>0:
@@ -45,7 +57,10 @@ def practice(SERVICES):
             time.sleep(.75)
             clear()
 
-            
+
+###Quiz destructively runs through a copy of the array and 
+###returns a grade based on how many right versus the total
+###number of questions asked
 def quiz(SERVICES):
     services = copy.deepcopy(SERVICES)
     total = len(services)
@@ -62,11 +77,54 @@ def quiz(SERVICES):
         del services[index]
         clear()
     print('%.2f'%((correct/total)*100)+'%')
-if __name__ == '__main__':
-    #This could easily be replaced with a file
-    services = [['ssh', '22'], ['dns', '53'], ['smtp', '25'], ['sftp', '22'], ['ftp', '20,21'], ['tftp', '69'], ['telnet', '23'], ['dhcp', '67,68'], ['http', '80'], ['https', '443'], ['snmp', '161'], ['rdp', '3389'], ['ntp', '123'], ['sip', '5060,5061'], ['smb', '445'], ['pop', '110'], ['imap', '143'], ['ldap', '389'], ['ldaps', '636']]
-   
+
+
+
+###Let's put it all together...
+if __name__ == '__main__': 
+
+###Load services variable: The main quiz array formatted as
+### [ ['question1','answer1'],['question2','answer2']...['question n','answer n']]
+### from a file formatted as question:answer delimited by newlines.
+    while True:
+        fname = str(input('select quiz file [default.txt]: '))
+        if fname == '':
+            try:
+                services = gen('default.txt')
+                break
+            except Exception as e:
+                print(e)
+                tryagain = str(input('try again? y/n: '))
+                while tryagain != 'y' and tryagain != 'n':
+                    tryagain = str(input('try again? y/n: '))
+                    if tryagain =='n':
+                    	exit()
+                    elif tryagain == 'y':
+                        break
+                    else:
+                        exit()
+        else:
+            try:
+                services = gen(fname)
+                break
+            except Exception as e:
+                print(e)
+                tryagain = str(input('try again? y/n: '))
+                if tryagain == 'n':
+                    exit()
+                elif tryagain == 'y':
+                    pass
+                else:
+                    while tryagain != 'y' or 'n':
+                        tryagain = str(input('try again? y/n: '))
+                        if tryagain == 'n':
+                            exit()
+                        elif tryagain == 'y':
+                            break
+                        else:
+                            exit()
     clear()
+
     menu()
     while True:
         try:

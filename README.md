@@ -1,6 +1,6 @@
 # ports-quiz
 ## Ports Quiz for Network+ Exam
----
+
 ### What is it?
 This is a simple study tool to learn the port/protocol associations on the CompTIA Network+ exam among others. 
 

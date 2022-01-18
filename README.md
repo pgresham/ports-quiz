@@ -20,6 +20,7 @@ You would answer `22` and get the response `correct!`<br/>
 If you entered `23` however, it will tell you the right answer (`22`) and recycle the question back into the rotation.<br/>
 Correctly answered questions are removed from the list until all questions have been answered correctly<br/>
 <br/><br/>
+Selecting option 2 provides a similar format but without feedback when a question is answered wrong. Each question is also asked only once and the number of right versus wrong answers are tallied and returned as a percentage "grade" at the end. Again 00 will stop the test and exit back to the main menu.<br/><br/>
 ### Great, I know my ports. Can I make a custom file?
 Yes! The code can easily be adapted to quiz just about anything using the quiz_maker.py script included with the main file. If you want to manually make your own file, format your text file as follows:
 <br/>

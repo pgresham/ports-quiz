@@ -13,14 +13,15 @@ You are then confronted with the main menu:<br/>
 `1 Practice The Ports`<br/>
 `2 Test Your Knowledge`<br/>
 `00 Exit (Works Any Time)`<br/><br/>
-Let's select option 1. As a note if you want to exit at any point, type 00 to get back to the last menu or exit.<br/>
-It will show you a protocol and you answer with the port or ports associated with it.<br/><br/>
+Let's select option 1. *As a note if you want to exit at any point, type `00` to get back to the last menu or exit.*<br/>
+You shold now see the name of a protocol. Type your answer as the port or ports associated with that protocol.<br/><br/>
 For instance let's say you select Practice see `ssh>` <br/>
 You would answer `22` and get the response `correct!`<br/>
 If you entered `23` however, it will tell you the right answer (`22`) and recycle the question back into the rotation.<br/>
+Let's say you get one like DHCP that has two ports. You would type`67,68` with a comma and no spaces between the two numbers.
 Correctly answered questions are removed from the list until all questions have been answered correctly<br/>
 <br/><br/>
-Selecting option 2 provides a similar format but without feedback when a question is answered wrong. Each question is also asked only once and the number of right versus wrong answers are tallied and returned as a percentage "grade" at the end. Again 00 will stop the test and exit back to the main menu.<br/><br/>
+Selecting option 2 provides a similar format but without feedback when a question is answered wrong. Each question is also asked only once and the number of right versus wrong answers are tallied and returned as a percentage "grade" at the end. Again `00` will stop the test and exit back to the main menu.<br/><br/>
 ### Great, I know my ports. Can I make a custom file?
 Yes! The code can easily be adapted to quiz just about anything using the quiz_maker.py script included with the main file. If you want to manually make your own file, format your text file as follows:
 <br/>
